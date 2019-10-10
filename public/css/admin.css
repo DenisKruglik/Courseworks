@@ -1,0 +1,35 @@
+h2{
+	font-weight: 300;
+	font-size: 2em;
+}
+
+main form{
+	margin-bottom: 30px;
+}
+
+#subject-input{
+	border: 0;
+	width: 200px;
+}
+
+#subject-input:focus{
+	outline: none;
+}
+
+.tagline{
+	position: relative;
+}
+
+#subjects{
+	padding: 5px 10px;
+	position: absolute;
+	top: 100%;
+	left: 200px;
+	right: 0;
+	z-index: 10;
+	background: white;
+}
+
+main > .card{
+	overflow: unset;
+}

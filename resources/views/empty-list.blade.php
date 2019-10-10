@@ -1,0 +1,1 @@
+<img class="emptiness" src="{{url('img/empty.png')}}">

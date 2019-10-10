@@ -1,0 +1,20 @@
+.professor-info img{
+	width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    vertical-align: top;
+}
+
+.professor-info .info{
+	display: inline-block;
+	width: calc(100% - 21vw);
+	padding-left: 20px;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.professor-info .subjects{
+	padding-left: 30px;
+}

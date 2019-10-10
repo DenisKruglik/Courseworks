@@ -1,0 +1,530 @@
+@font-face{
+	font-family: "Open Sans";
+	font-weight: 400;
+ 	src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face{
+	font-family: "Open Sans";
+	font-weight: 300;
+ 	src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face{
+	font-family: "Open Sans";
+	font-weight: 600;
+ 	src: url("../fonts/OpenSans-SemiBold.ttf");
+}
+
+@font-face{
+	font-family: "Open Sans";
+	font-weight: 700;
+ 	src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face{
+	font-family: "Open Sans";
+	font-weight: 800;
+ 	src: url("../fonts/OpenSans-ExtraBold.ttf");
+}
+
+@font-face{
+	font-family: "Century Gothic";
+ 	src: url("../fonts/11528.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 200;
+ 	src: url("../fonts/Oswald-ExtraLight.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 400;
+ 	src: url("../fonts/Oswald-Regular.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 500;
+ 	src: url("../fonts/Oswald-Medium.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 600;
+ 	src: url("../fonts/Oswald-SemiBold.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 700;
+ 	src: url("../fonts/Oswald-Bold.ttf");
+}
+
+@font-face{
+	font-family: "Oswald";
+	font-weight: 200;
+ 	src: url("../fonts/Oswald-ExtraLight.ttf");
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: ghostwhite;
+}
+
+a{
+    color: rgba(61, 193, 211,1.0);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover{
+    color: #8cdae4;
+}
+
+a:visited{
+    color: rgba(61, 193, 211,1.0);
+}
+
+.card{
+    padding: 30px 50px;
+    box-shadow: 1px 1px 5px #ccc;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.button{
+    border: 0;
+    background: rgba(243, 166, 131,1.0);
+    color: white;
+    padding: 10px 20px;
+    font-family: "Oswald";
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button:focus{
+    outline: none;
+}
+
+.button:hover{
+    background: rgba(247, 215, 148,1.0);
+    color: rgba(61, 193, 211,1.0);
+}
+
+#notification{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 30px;
+    display: none;
+    z-index: 10;
+}
+
+.notification-info{
+    color: cornflowerblue;
+}
+
+.notification-error{
+    color: red;
+}
+
+header{
+    box-shadow: 1px 0 5px #ccc;
+    background: rgba(247, 215, 148,1.0);
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    font-family: "Century Gothic";
+    margin-left: 20px;
+    display: inline-flex;
+    height: 7vh;
+    align-items: center;
+    color: #f19066;
+}
+
+header .lang{
+    display: inline-flex;
+    list-style: none;
+    float: right;
+    height: 7vh;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .lang li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header .lang a.selected{
+    color: #f19066;
+}
+
+header .auth-buttons{
+    float: right;
+    margin-right: 20px;
+    display: inline-block;
+    font-size: 0;
+}
+
+header .auth-buttons li{
+    display: inline-block;
+}
+
+header .auth-buttons li input[type="button"], header .profile-info .logout input[type="button"]{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    height: 7vh;
+    border: 0;
+    background: transparent;
+    color: rgba(61, 193, 211,1.0);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: "Oswald";
+    font-size: 20px;
+}
+
+header .profile-info .greeting{
+    font-family: "Oswald";
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .username{
+    /*font-size: 1.4em;*/
+    margin: 0 10px;
+    color: rgba(241, 144, 102,1.0);
+    font-family: "Oswald";
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+header .profile-info .logout:visited, header .profile-info .logout:focus{
+    outline: none;
+}
+
+header .auth-buttons li input[type="button"]:hover, header .profile-info .logout input[type="button"]:hover{
+    background: rgba(243, 166, 131,1.0);
+    color: white;
+}
+
+header .auth-buttons li input[type="button"]:focus, header .profile-info .logout input[type="button"]:focus{
+    outline: none;
+}
+
+header .profile-info{
+    display: inline-flex;
+    /*float: right;*/
+    margin-right: 20px;
+    align-items: center;
+}
+
+header .profile-info > *{
+    display: inline-block;
+}
+
+main{
+    min-height: 88vh;
+    padding: 40px 5%;
+    box-sizing: border-box;
+}
+
+main h2, main h3, main h4, main h5, main h6{
+    font-family: "Oswald";
+}
+
+footer{
+    height: 5vh;
+    background: rgba(48, 57, 82,1.0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald";
+    color: ghostwhite;
+    box-shadow: -1px 0 5px #aaa;
+}
+
+.pagination{
+	list-style: none;
+	text-align: center;
+}
+
+.pagination li{
+	display: inline-block;
+}
+
+.pagination li:not(:last-child){
+	margin-right: 10px;
+}
+
+.overlay{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.7);
+	align-items: center;
+	justify-content: center;
+	display: none;
+	animation: appear 0.2s;
+}
+
+.input-field{
+    padding: 5px 10px;
+    font-size: 1em;
+    font-family: "Open Sans";
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.input-field:focus{
+    outline: none;
+}
+
+.searchline{
+    display: inline-flex;
+    height: 7vh;
+    align-items: center;
+    vertical-align: top;
+    /*float: right;*/
+}
+
+.searchline input[name=search_query]{
+    padding: 10px;
+    width: 43vw;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #ccc;
+    border-right: 0;
+}
+
+.searchline button[type=submit]{
+    background: url(../img/search.png);
+    height: 37px;
+    width: 39px;
+    background-size: contain;
+    background-position: center;
+    border: 1px solid rgba(61, 193, 211,1.0);
+    background-color: rgba(61, 193, 211,1.0);
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+}
+
+.searchline > *:focus{
+    outline: none;
+}
+
+header .avatar{
+    height: 6vh;
+    width: 6vh;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+header .profile-buttons{
+    height: 7vh;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    transition: all 0.2s;
+    color: rgba(243, 166, 131,1.0);
+    position: relative;
+}
+
+header .profile-buttons:hover{
+    background: rgba(243, 166, 131,1.0);
+    color: white;
+}
+
+header .profile-buttons:hover .username{
+    color: white;
+}
+
+header .profile-buttons .button-list{
+    display: none;
+    animation: appear 0.2s;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header .profile-buttons .button-list li{
+    display: block;
+    /*width: 100%;*/
+}
+
+header .profile-buttons .button-list a{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .profile-buttons:hover .button-list{
+    display: block;
+}
+
+main h2{
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #f19066;
+    margin-bottom: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+.tag{
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+}
+
+.coursework{
+    margin-bottom: 30px;
+}
+
+.coursework figure > a{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.coursework figure > a p{
+    text-align: center;
+}
+
+.coursework img{
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.coursework figcaption{
+    display: inline-block;
+    width: calc(100% - 16vw);
+    vertical-align: top;
+}
+
+.coursework figcaption p{
+    padding-left: 30px;
+}
+
+.coursework h3{
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #f19066;
+    margin-bottom: 15px;
+}
+
+.coursework .button{
+    margin-top: 10px;
+}
+
+main h3{
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #f19066;
+    margin-bottom: 15px;
+}
+
+.emptiness{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.coursework figure > .student-info{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.coursework figure > .student-info p{
+    text-align: center;
+}
+
+.professor{
+    display: inline-block;
+    max-width: 15vw;
+    margin-right: 20px;
+}
+
+.professor a{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.professor img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.professor span{
+    text-align: center;
+}
